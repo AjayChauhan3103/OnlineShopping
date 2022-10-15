@@ -1,5 +1,6 @@
 package com.example.onlineshopping
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
 //  operation of login button and on words
         bind.loginButton.setOnClickListener{
+
             checkLoginCondition(bind.inputUserID.text.toString(),"Ajay3131")
 
         }
@@ -32,8 +34,7 @@ class MainActivity : AppCompatActivity() {
     fun checkLoginCondition(inputUserID : String , actuallyUserID : String){
 
         if(inputUserID == actuallyUserID){
-            Toast.makeText(this, "userID match", Toast.LENGTH_SHORT).show()
-            checkLoginCondition1(bind.inputPassword.text.toString(),"Ajay@1234")
+            checkLoginCondition1(bind.inputPassword.text.toString(),"Ajay@123")
         }
         else{
             Toast.makeText(this, "Incorrect UserID", Toast.LENGTH_SHORT).show()
@@ -43,7 +44,10 @@ class MainActivity : AppCompatActivity() {
 
     fun checkLoginCondition1(inputUserpass : String, actuallyUserpass: String){
         if(inputUserpass == actuallyUserpass){
-            Toast.makeText(this , "password match", Toast.LENGTH_SHORT).show()
+
+            var intent = Intent(this , UserINFO::class.java)
+            startActivity(intent)
+
         }
         else{
             Toast.makeText(this, "password don't match", Toast.LENGTH_SHORT).show()

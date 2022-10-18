@@ -9,15 +9,15 @@ import com.example.onlineshopping.databinding.ActivityUserInfoBinding
 
 class UserINFO : AppCompatActivity() {
 
-//lateinit var bind : ActivityUserInfoBinding
+    lateinit var bind : ActivityUserInfoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        var bind = ActivityUserInfoBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_user_info)
+        bind = ActivityUserInfoBinding.inflate(layoutInflater)
+        setContentView(bind.root)
 
-        findViewById<Button>(R.id.logoutButton).setOnClickListener{
+        bind.logoutButton.setOnClickListener{
             var intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }

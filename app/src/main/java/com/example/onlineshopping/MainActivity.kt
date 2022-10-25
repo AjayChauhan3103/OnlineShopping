@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
     fun checkLoginCondition1(inputUserpass : String, actuallyUserpass: String){
         if(inputUserpass == actuallyUserpass){
 
-            var intent = Intent(this , UserINFO::class.java)
+            var intent = Intent(this , RecyclerViewUserID::class.java)
             startActivity(intent)
 
         }
